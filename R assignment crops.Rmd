@@ -1,0 +1,72 @@
+---
+title: "crops"
+author: "STUDENT"
+date: "2024-07-08"
+output: html_document
+---
+
+```{r}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+ggplot(crops, aes(x = RICEYIELD)) + 
+  geom_histogram(binwidth = 10, fill = "blue", color = "black") +
+  theme_minimal()
+```
+```{r}
+ggplot(crops, aes(x = Year, y = RICEYIELD)) + 
+  geom_boxplot(fill = "orange", color = "black") +
+  theme_minimal()
+```
+```{r}
+ggplot(crops, aes(x = StateName, y = RICEYIELD)) + 
+  geom_boxplot(fill = "purple", color = "pink") +
+  theme_minimal()
+```
+```{r}
+ggplot(crops, aes(x = DistName, y = WHEATYIELD)) + 
+  geom_boxplot(fill = "red", color = "black") +
+  theme_minimal()
+
+```{r}
+ggplot(crops, aes(x =WHEATYIELD )) + 
+  geom_histogram(binwidth = 10, fill = "brown", color = "black") +
+  theme_minimal()
+```
+```{r}
+ggplot(crops, aes(x =MAIZEYIELD)) + 
+  geom_histogram(binwidth = 10, fill = "red", color = "black") +
+  theme_minimal()
+```
+```{r}
+ggplot(crops, aes(x = WHEATAREA, y =WHEATYIELD)) + 
+  geom_point(color = "red") +
+  theme_minimal()
+```{r}
+ggplot(crops, aes(x =RICEAREA, y = RICEYIELD)) + 
+  geom_point(color = "blue") +
+  theme_minimal()
+```
+```{r}
+ggpairs(crops[, c("RICEAREA", "RICEPRODUCTION", "RICEYIELD")])
+```
+```{r}
+ggpairs(crops[, c("WHEATAREA", "WHEATPRODUCTION", "WHEATYIELD")])
+```
+
+```{r}
+ggpairs(crops[, c("RICEAREA", "RICEPRODUCTION", "RICEYIELD")])
+```
+
+```{r}
+ggplot(crops, aes(x =MILLETYIELD)) + 
+  geom_histogram(binwidth = 10, fill = "pink", color = "blue") +
+  theme_minimal()
+```
